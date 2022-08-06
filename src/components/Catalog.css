@@ -1,7 +1,7 @@
 .catalog .Product{
     display: inline-block;
     width: 280px;
-    height: 320px;
+    height: fit-content;
     margin-bottom: 20px;
     margin-left: 20px;
 }

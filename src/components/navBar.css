@@ -1,0 +1,17 @@
+.btn.btn-outline-success{
+    border-color: white;
+    color: white;
+}
+
+.btn.btn-outline-success:hover{
+    background-color: white;
+    color: black;
+}
+
+li .nav-link{
+    color: white;
+}
+
+li .nav-link:hover{
+    color:#bcbcbc;
+}

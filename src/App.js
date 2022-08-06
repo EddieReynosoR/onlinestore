@@ -7,15 +7,19 @@ import AboutMe from './components/About';
 import Product from './components/product';
 import Catalog from './components/Catalog';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+
+
+
 function App() {
   return (
     <div className="App">
       <NavBar></NavBar>
-      <h1>My online store!!!</h1>
+      <h1>Sneak Shop</h1>
 
       <Catalog/>
       
-      <AboutMe></AboutMe>
       <Footer></Footer>
     </div>
   );
