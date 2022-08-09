@@ -1,7 +1,7 @@
 import './QuantityPicker.css';
 import { useState } from 'react';
 
-const QuantityPicker = () => {
+const QuantityPicker = (props) => {
 
     const [quantity, setQuantity] = useState(0);
     let number;
@@ -11,6 +11,7 @@ const QuantityPicker = () => {
 
         if (number >= 0){
             setQuantity(number);
+            props.onChange(number);
         }
     };
 
@@ -18,7 +19,12 @@ const QuantityPicker = () => {
         number = quantity + 1;
         // console.log('Increase...');
         
-        setQuantity(number);
+        if(number <= props.max){
+            setQuantity(number);
+            props.onChange(number);
+        }else{
+            alert('20 is the max amount of sneakers that you can buy...');
+        }
     };
 
 

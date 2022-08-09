@@ -8,10 +8,23 @@ const Catalog = () => {
 
     const [products, setProducts] = useState([]);
 
+    const [categorys, setCategories] = useState([]);
+
     const loadData = () =>{
         let service = new DataService(); // instance of the class
         let prods = service.getCatalog();
         setProducts(prods);
+
+
+        let uniques = [];
+        for (let i = 0; i < prods.length; i++) {
+            if(!uniques.includes(prods[i].category)){
+                uniques.push(prods[i].category);
+            }
+            
+        }
+
+        setCategories(uniques);
     };
 
     useEffect(() => {
@@ -21,6 +34,12 @@ const Catalog = () => {
     return (
         <div className='catalog'>
             <h2>Catalog</h2>
+
+            <div className='Filters'>
+                {categorys.map((item) => (
+                    <button className='btn btn-secondary'>{item}</button>
+                ))}
+            </div>
 
             <div className='products'>
                 {products.map((prod) => (

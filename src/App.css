@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.title{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 70px;
+}
+
+
