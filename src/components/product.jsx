@@ -34,7 +34,7 @@ const Product = (props) => {
             <div>
                 <label>Total: ${((props.data.price)*(quantity)).toFixed(2)}</label>
 
-                <button id='addButton' className='btn btn-success' onClick={AddToCart}>Add to cart</button>
+                <button id='addButton' className='btn btn-dark' onClick={AddToCart}>Add to cart</button>
             </div>
             
 

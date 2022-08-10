@@ -6,6 +6,11 @@
     
 }
 
+.quanPick button{
+    border-radius: 10px;
+    width: 30px;
+}
+
 .quanPick label{
     margin-left: 10px;
     margin-right: 10px;

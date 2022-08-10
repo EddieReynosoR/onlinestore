@@ -1,7 +1,8 @@
-import Product from './product';
+import Product from '../product';
 import './Catalog.css';
 import { useEffect, useState } from 'react';
-import DataService from '../services/dataService';
+import DataService from '../../services/dataService';
+import Footer from '../footer';
 
 
 const Catalog = () => {
@@ -33,7 +34,7 @@ const Catalog = () => {
 
     return (
         <div className='catalog'>
-            <h2>Catalog</h2>
+            <h2>CATALOG</h2>
 
             <div className='Filters'>
                 {categorys.map((item) => (
@@ -47,6 +48,7 @@ const Catalog = () => {
                 ))}     
             </div>
             
+            <Footer></Footer>
         </div>
         
     )

@@ -2,11 +2,15 @@
 import './App.css';
 import NavBar from './components/navBar';
 import Footer from './components/footer';
-import QuantityPicker from './components/QuantityPicker';
-import AboutMe from './components/About';
-import Product from './components/product';
-import Catalog from './components/Catalog';
+// import QuantityPicker from './components/QuantityPicker';
+// import AboutMe from './components/About';
+// import Product from './components/product';
+import Catalog from './components/pages/Catalog';
 import ShoppingList from './components/shoppingList';
+import Principal from './components/pages/principal';
+
+
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -15,17 +19,25 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 
 
 
+
+
 function App() {
   return (
     <div className="App">
-      <NavBar></NavBar>
-      <h1 className='title'>Sneak Shop</h1>
 
-      <Catalog/>
 
-      <ShoppingList/>
-      
-      <Footer></Footer>
+      <Router>
+        <NavBar/>
+        <Routes>
+          <Route path='/' element={<Principal/>}/>
+          <Route path='/Catalog' element={<Catalog/>}/>
+        </Routes>
+      </Router>
+
+
+
+      {/* <ShoppingList/> */}
+    
     </div>
   );
 }

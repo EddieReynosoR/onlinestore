@@ -5,8 +5,10 @@
     margin: auto;
     padding-bottom: 10px;
     width: fit-content;
-    
+    font-family: 'Roboto Condensed', sans-serif;
 }
+
+
 
 .Product img{
     height: 200px;

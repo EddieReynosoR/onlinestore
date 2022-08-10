@@ -1,23 +1,24 @@
 import './navBar.css';
+import {Link} from 'react-router-dom';
 
 const NavBar = () => {
     return (
         <div>
-            <nav class="navbar navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <nav className="navbar navbar-dark bg-dark">
+                <div className="container-fluid">
+                    <ul className="nav">
+                        <li className="nav-item">
+                            <Link className="nav-link active" to='/'>Home</Link>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Catalog</a>
+                        <li className="nav-item">
+                            <Link className="nav-link" to='/Catalog'>Catalog</Link>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Cart</a>
+                        {/* <li className="nav-item">
+                            <a className="nav-link" href="#">Cart</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">About</a>
+                        </li> */}
                     </ul>
 
 
