@@ -1,5 +1,6 @@
 import './principal.css';
 import Footer from '../footer';
+import {Link} from "react-router-dom";
 
 const Principal = () => {
     return (
@@ -13,11 +14,18 @@ const Principal = () => {
                 <img className='section-img' src="./images/shoes.jpg" alt="shoes" />
             </div>
 
-            <div>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias accusamus iusto nobis consequuntur beatae tenetur. Nam, nostrum earum asperiores illo in aliquam distinctio eum placeat, maiores officia praesentium, sit voluptatibus.
-                </p>
-            </div>
+            <Link className="btn btn-dark" to='/Catalog' id='checkOut'>CHECK OUT OUT CATALOG</Link>
+
+            <section className='AboutSneakers'>
+                <div className='main'>
+                    <img src="./images/sneakers.jpg" alt="sneakers"/>
+                    <div className='about-text'>
+                        <h2>About Us</h2>
+                        <h5>Sneakers shop</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil assumenda autem, consectetur pariatur at facere, in maiores totam perferendis corporis dolorem mollitia eius accusantium sed voluptates, aperiam esse nisi vel!</p>
+                    </div>
+                </div>
+            </section>
 
             <Footer></Footer>
         </div>

@@ -32,13 +32,17 @@ const Catalog = () => {
         loadData();
     }, []);
 
+    const Filter = () => {
+        
+    }
+
     return (
         <div className='catalog'>
             <h2>CATALOG</h2>
 
             <div className='Filters'>
                 {categorys.map((item) => (
-                    <button className='btn btn-secondary'>{item}</button>
+                    <button className='btn btn-secondary' onClick={Filter}>{item}</button>
                 ))}
             </div>
 

@@ -13,20 +13,17 @@ const NavBar = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to='/Catalog'>Catalog</Link>
                         </li>
-                        {/* <li className="nav-item">
-                            <a className="nav-link" href="#">Cart</a>
+                        <li className="nav-item">
+                            <Link className="nav-link" to='/List'>Shopping List</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">About</a>
-                        </li> */}
+                            <Link className="nav-link" to='/About'>About Me</Link>
+                        </li> 
                     </ul>
 
 
-
-                    <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <Link className="btn btn-dark" to='/Cart' id='Cart'>View Cart</Link>
+                    
                 </div>
             </nav>
         </div>

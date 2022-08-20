@@ -17,3 +17,14 @@ li .nav-link{
 li .nav-link:hover{
     color:#bcbcbc;
 }
+
+#Cart{
+    border-color: white;
+    font-size: 15px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#Cart:hover{
+    background-color: white;
+    color: black;
+}
