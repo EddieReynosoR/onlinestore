@@ -10,7 +10,9 @@ const ShoppingList = () => {
     const Save = () => {
         console.log(text);
 
-        items.push(text);
+        let clone = [...items];
+        clone.push(text);
+        setItems(clone);
     };
 
     const textChange = (e) => {
@@ -30,8 +32,8 @@ const ShoppingList = () => {
             </div>
 
             <ul>
-                {items.map((item) => (
-                    <li> {item} </li>
+                {items.map((item, index) => (
+                    <li key={index}> {item} </li>
                 ))}
             </ul>
             

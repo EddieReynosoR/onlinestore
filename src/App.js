@@ -9,6 +9,7 @@ import Catalog from './components/pages/Catalog';
 import ShoppingList from './components/shoppingList';
 import Principal from './components/pages/principal';
 import Cart from './components/Cart';
+import Admin from './components/Admin';
 
 
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
@@ -36,6 +37,7 @@ function App() {
           <Route path='/About' element={<AboutMe/>}/>
           <Route path='/List' element={<ShoppingList/>}/>
           <Route path='/Cart' element={<Cart/>}/>
+          <Route path='/Admin' element={<Admin/>}/>
 
         </Routes>
       </Router>
