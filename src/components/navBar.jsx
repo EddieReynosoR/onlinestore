@@ -1,7 +1,11 @@
 import './navBar.css';
 import {Link} from 'react-router-dom';
+import { useContext } from 'react';
+import StoreContext from '../store/storeContext';
+import Cart from './Cart';
 
 const NavBar = () => {
+    let cart = useContext(StoreContext).cart;
     return (
         <div>
             <nav className="navbar navbar-dark bg-dark">
@@ -25,7 +29,9 @@ const NavBar = () => {
                     </ul>
 
 
-                    <Link className="btn btn-dark" to='/Cart' id='Cart'>View Cart</Link>
+                    <Link className="btn btn-dark" to='/Cart' id='Cart'>
+                        {cart.length} &nbsp;View Cart
+                    </Link>
                     
                 </div>
             </nav>

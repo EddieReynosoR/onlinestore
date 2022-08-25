@@ -10,6 +10,7 @@ import ShoppingList from './components/shoppingList';
 import Principal from './components/pages/principal';
 import Cart from './components/Cart';
 import Admin from './components/Admin';
+import GlobalState from './store/globalState';
 
 
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
@@ -28,24 +29,28 @@ function App() {
   return (
     <div className="App">
 
+      <GlobalState>
 
-      <Router>
-        <NavBar/>
-        <Routes>
-          <Route path='/' element={<Principal/>}/>
-          <Route path='/Catalog' element={<Catalog/>}/>
-          <Route path='/About' element={<AboutMe/>}/>
-          <Route path='/List' element={<ShoppingList/>}/>
-          <Route path='/Cart' element={<Cart/>}/>
-          <Route path='/Admin' element={<Admin/>}/>
+        <Router>
+          <NavBar/>
+          <Routes>
+            <Route path='/' element={<Principal/>}/>
+            <Route path='/Catalog' element={<Catalog/>}/>
+            <Route path='/About' element={<AboutMe/>}/>
+            <Route path='/List' element={<ShoppingList/>}/>
+            <Route path='/Cart' element={<Cart/>}/>
+            <Route path='/Admin' element={<Admin/>}/>
 
-        </Routes>
-      </Router>
+          </Routes>
+        </Router>
 
 
 
-      {/* <ShoppingList/> */}
-    
+        {/* <ShoppingList/> */}
+      
+      
+      </GlobalState>
+
     </div>
   );
 }
