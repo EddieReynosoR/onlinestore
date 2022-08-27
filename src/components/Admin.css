@@ -9,7 +9,16 @@
     display: flex;
 }
 
+.list input, .list label{ 
+    margin-bottom: 10px;
+    margin-right: 50px;
+}
+
 .parent .products{
+    margin-right: 200px;
+}
+
+.list .products{
     margin-right: 200px;
 }
 

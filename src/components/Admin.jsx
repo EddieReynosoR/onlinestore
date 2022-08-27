@@ -56,7 +56,7 @@ const Admin = () => {
                     </div>
 
                     <div className="my-form">
-                        <label>Image</label>
+                        <label>Image:</label>
                         <input name='image' type="text" onChange={textChange}/>
                     </div>
 
@@ -74,12 +74,12 @@ const Admin = () => {
                     <h3>Discount Codes</h3>
 
                     <div className="my-form">
-                        <label>Code</label>
+                        <label>Code:</label>
                         <input name='code' type="text" onChange={couponChange}/>
                     </div>
 
                     <div className="my-form">
-                        <label>Discount</label>
+                        <label>Discount:</label>
                         <input name='discount' type="text" onChange={couponChange}/>
                     </div>
 

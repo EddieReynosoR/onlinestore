@@ -7,11 +7,17 @@ import StoreContext from '../store/storeContext';
 const Product = (props) => {
 
     const [quantity, setQuantity] = useState(0);
+
     const product = useContext(StoreContext).addToCart;
 
     const AddToCart = () => {
+
         console.log("Adding to cart...");
-        product(props.data);
+
+
+        let prodForCart = {...props.data, quantity: quantity};
+        
+        product(prodForCart);
     };
 
 

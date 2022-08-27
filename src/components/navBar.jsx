@@ -2,10 +2,21 @@ import './navBar.css';
 import {Link} from 'react-router-dom';
 import { useContext } from 'react';
 import StoreContext from '../store/storeContext';
-import Cart from './Cart';
+
 
 const NavBar = () => {
-    let cart = useContext(StoreContext).cart;
+    const cart = useContext(StoreContext).cart;
+
+    const getQuantityItems = () => {
+        let total = 0;
+
+        for (let i = 0; i < cart.length; i++) {
+
+            total += cart[i].quantity;
+        }
+
+        return total;
+    };
     return (
         <div>
             <nav className="navbar navbar-dark bg-dark">
@@ -30,13 +41,13 @@ const NavBar = () => {
 
 
                     <Link className="btn btn-dark" to='/Cart' id='Cart'>
-                        {cart.length} &nbsp;View Cart
+                        {getQuantityItems()} &nbsp;View Cart
                     </Link>
                     
                 </div>
             </nav>
         </div>
-    )
+    );
 };
 
 export default NavBar;

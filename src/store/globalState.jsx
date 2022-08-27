@@ -14,8 +14,23 @@ const GlobalState = (props) => {
         // create a copy, mod copy, set the copy
 
         let copy = [...cart];
-        copy.push(prod);
+
+        let exist = false;
+
+        for(let i = 0; i < copy.length; i++){
+            if(copy[i]._id === prod._id){
+                exist = true;
+                copy[i].quantity += prod.quantity;
+            }
+        }
+
+        if(!exist){
+            copy.push(prod);
+        }
+
         setCart(copy);
+
+
     };
     const removeFromCart = () => {};
 
