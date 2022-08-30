@@ -11,18 +11,19 @@ const Catalog = () => {
 
     const [categorys, setCategories] = useState([]);
 
-    const loadData = () =>{
+    const loadData = async () => {
         let service = new DataService(); // instance of the class
-        let prods = service.getCatalog();
+        let prods = await service.getCatalog();
         setProducts(prods);
+        console.log(prods)
 
 
         let uniques = [];
         for (let i = 0; i < prods.length; i++) {
-            if(!uniques.includes(prods[i].category)){
+            if (!uniques.includes(prods[i].category)) {
                 uniques.push(prods[i].category);
             }
-            
+
         }
 
         setCategories(uniques);
@@ -33,7 +34,7 @@ const Catalog = () => {
     }, []);
 
     const Filter = () => {
-        
+
     }
 
     return (
@@ -49,12 +50,12 @@ const Catalog = () => {
             <div className='products'>
                 {products.map((prod) => (
                     <Product key={prod._id} data={prod}></Product>
-                ))}     
+                ))}
             </div>
-            
+
             <Footer></Footer>
         </div>
-        
+
     )
 };
 

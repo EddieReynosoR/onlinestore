@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 let catalog = [
     {
         _id: "1",
@@ -7,7 +9,7 @@ let catalog = [
         category: "Basketball shoes",
         image: "./images/jordans.png"
     },
-    
+
     {
         _id: "2",
         title: "Nike LeBron 19",
@@ -36,13 +38,24 @@ let catalog = [
     }
 ];
 
-class DataService{
+class DataService {
 
-    getCatalog(){
+    async getCatalog() {
         // Call the server
         // Get the list of products and return it
 
-        return catalog;
+        let res = await axios.get("http://127.0.0.1:5000/api/catalog");
+
+        return res.data;
+        // return catalog;
+    }
+
+
+    async saveProduct(prod){
+        let res = await axios.post("http://127.0.0.1:5000/api/catalog", prod);
+
+        return res.data;
+
     }
 
 }
