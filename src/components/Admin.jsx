@@ -1,6 +1,6 @@
 import './Admin.css';
 import Footer from './footer';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DataService from '../services/dataService';
 
 const Admin = () => {
@@ -8,6 +8,7 @@ const Admin = () => {
     const [product, setProduct] = useState({})
     const [coupon, setCoupon] = useState({})
     const [showProdSuccess, setShowProdSuccess] = useState(false);
+    const [showCouponSuccess, setShowCouponSuccess] = useState(false);
 
     const saveProduct = async() => {
         console.log("Saving product...");
@@ -28,7 +29,7 @@ const Admin = () => {
 
             setTimeout(() => {
                 setShowProdSuccess(false);
-            }, 6000);
+            }, 2000);
         }
     }
 
@@ -42,8 +43,27 @@ const Admin = () => {
         setProduct(copy);
     };
 
-    const saveCoupon = () => {
+    const saveCoupon = async() => {
+        console.log("Saving coupon...");
         console.log(coupon);
+
+        // use the service to send it to server
+
+
+        let fixCoupon = {...coupon};
+        fixCoupon.discount = parseFloat(fixCoupon.discount);
+
+        let service = new DataService(); // instance of the class
+        let savedCoupon = await service.saveCoupon(fixCoupon);
+             
+        
+        if(savedCoupon && savedCoupon._id){
+            setShowCouponSuccess(true);
+
+            setTimeout(() => {
+                setShowCouponSuccess(false);
+            }, 2000);
+        }
     }
 
     const couponChange = (e) => {
@@ -56,12 +76,35 @@ const Admin = () => {
         setCoupon(copy);
     };
 
+    const loadCoupons = async() => {
+        let service = new DataService(); // instance of the class
+        let coupons = await service.getCoupons();
+        setCoupon(coupons);
+        console.log(coupons)
+
+
+        // let uniques = [];
+        // for (let i = 0; i < coupons.lenght; i++) {
+        //     if (!uniques.includes(coupons[i].code)) {
+        //         uniques.push(coupons[i].code);
+        //     }
+
+        // }
+
+        // setCoupon(uniques);
+    }
+
+    useEffect(() => {
+        loadCoupons();
+    }, []);
+
 
     return (
         <div className="admin">
             <h1>Store administration</h1>
 
             {showProdSuccess ? <div className='alert alert-success'>Product Saved</div>:null}
+            {showCouponSuccess ? <div className='alert alert-success'>Coupon Saved</div>:null}
 
             <div className="parent">
                 <section className="products">
@@ -75,6 +118,11 @@ const Admin = () => {
                     <div className="my-form">
                         <label>Price:</label>
                         <input name='price' type="number" onChange={textChange}/>
+                    </div>
+
+                    <div className="my-form">
+                        <label>Brand:</label>
+                        <input name='brand' type="text" onChange={textChange}/>
                     </div>
 
                     <div className="my-form">
